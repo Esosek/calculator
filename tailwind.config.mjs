@@ -16,6 +16,10 @@ export default {
       'light-text': 'var(--clr-text-light)',
       'primary-text': 'var(--clr-text-primary)',
     },
+    fontSize: {
+      sm: '0.75rem',
+      base: '2rem',
+    },
     extend: {
       theme: {
         fontFamily: ['League Spartan', 'system-ui', 'sans-serif'],
