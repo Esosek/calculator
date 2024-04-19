@@ -3,7 +3,7 @@ export default {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   theme: {
     colors: {
-      'bg-main': 'var(--clr-bg-main)',
+      'main-bg': 'var(--clr-bg-main)',
       keypad: 'var(--clr-bg-keypad)',
       'calc-screen': 'var(--clr-bg-screen)',
       'key-primary': 'var(--clr-key-primary)',
