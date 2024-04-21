@@ -21,9 +21,7 @@ export default {
       base: '2rem',
     },
     extend: {
-      theme: {
-        fontFamily: ['League Spartan', 'system-ui', 'sans-serif'],
-      },
+      theme: {},
     },
   },
   plugins: [],
