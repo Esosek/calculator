@@ -12,9 +12,9 @@ export default {
       'key-secondary-sh': 'var(--clr-key-secondary-shadow)',
       'key-tertiary': 'var(--clr-key-tertiary)',
       'key-tertiary-sh': 'var(--clr-key-tertiary-shadow)',
-      'dark-text': 'var(--clr-text-dark)',
-      'light-text': 'var(--clr-text-light)',
-      'primary-text': 'var(--clr-text-primary)',
+      'text-primary': 'var(--clr-text-primary)',
+      'text-secondary': 'var(--clr-text-secondary)',
+      'text-tertiary': 'var(--clr-text-tertiary)',
     },
     fontSize: {
       sm: '0.75rem',

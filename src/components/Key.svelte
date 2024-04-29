@@ -2,24 +2,28 @@
   import { KeyType } from '../utils/keyType';
 
   export let value;
-  export let size = 1;
   export let type = KeyType.Basic;
+  export let onPress = (value) => {};
+  export let extraClasses = '';
 
-  let bgColor = 'key-tertiary';
-  let textColor = 'text-dark-text';
+  let bgColor = 'bg-key-tertiary';
+  let shColor = 'shadow-key-tertiary-sh';
+  let textColor = 'text-text-secondary';
   let textSize = 'text-base';
 
   switch (type) {
     case KeyType.Basic:
       break;
     case KeyType.Primary:
-      bgColor = 'key-primary';
-      textColor = 'text-light-text';
+      bgColor = 'bg-key-primary';
+      shColor = 'shadow-key-primary-sh';
+      textColor = 'text-text-primary';
       textSize = 'text-[1.25rem]';
       break;
     case KeyType.Secondary:
-      bgColor = 'key-secondary';
-      textColor = 'text-light-text';
+      bgColor = 'bg-key-secondary';
+      shColor = 'shadow-key-secondary-sh';
+      textColor = 'text-text-primary';
       textSize = 'text-[1.25rem]';
       break;
     default:
@@ -28,6 +32,7 @@
 </script>
 
 <button
-  class={`bg-${bgColor} ${textColor} ${textSize} col-span-${size} p-1 pt-2 rounded-md shadow-[0_5px] shadow-${bgColor}-sh`}
+  on:click={() => onPress(value)}
+  class={`${bgColor} ${textColor} ${textSize} p-1 pt-2 min-h-[3.75rem] min-w-[3.75rem] rounded-md shadow-[0_4px] ${shColor} ${extraClasses}`}
   >{value}</button
 >

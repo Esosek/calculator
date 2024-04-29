@@ -17,8 +17,8 @@
     --clr-key-tertiary: hsl(30, 25%, 89%);
     --clr-key-tertiary-shadow: hsl(28, 16%, 65%);
 
-    --clr-text-dark: hsl(221, 14%, 31%);
-    --clr-text-light: hsl(0, 0%, 100%);
+    --clr-text-primary: hsl(0, 0%, 100%);
+    --clr-text-secondary: hsl(221, 14%, 31%);
   }
 
   html[data-theme='light'] {
@@ -35,8 +35,8 @@
     --clr-key-tertiary-bg: hsl(45, 7%, 89%);
     --clr-key-tertiary-shadow: hsl(35, 11%, 61%);
 
-    --clr-text-dark: hsl(60, 10%, 19%);
-    --clr-text-light: hsl(0, 0%, 100%);
+    --clr-text-primary: hsl(60, 10%, 19%);
+    --clr-text-secondary: hsl(0, 0%, 100%);
   }
 
   html[data-theme='neon'] {
@@ -53,8 +53,8 @@
     --clr-key-tertiary-bg: hsl(268, 47%, 21%);
     --clr-key-tertiary-shadow: hsl(290, 70%, 36%);
 
-    --clr-text-dark: hsl(198, 20%, 13%);
-    --clr-text-light: hsl(0, 0%, 100%);
-    --clr-text-primary: hsl(52, 100%, 62%);
+    --clr-text-primary: hsl(198, 20%, 13%);
+    --clr-text-secondary: hsl(0, 0%, 100%);
+    --clr-text-tertiary: hsl(52, 100%, 62%);
   }
 }

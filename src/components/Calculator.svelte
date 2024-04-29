@@ -3,7 +3,7 @@
   import Keypad from './Keypad.svelte';
 </script>
 
-<body class="bg-main-bg text-base text-light-text font-bold">
+<body class="bg-main-bg text-base text-text-primary font-bold">
   <main class="p-8 space-y-6">
     <div class="flex justify-between items-center mb-4">
       <h1>calc</h1>
