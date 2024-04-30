@@ -44,7 +44,7 @@
     <button on:click={changeTheme} class="bg-keypad p-1 rounded-full">
       <div
         id="toggle"
-        class="size-4 bg-key-primary rounded-full transition-all"
+        class="size-4 bg-key-primary rounded-full transition-all hover:bg-key-primary-hover"
       ></div>
     </button>
   </div>

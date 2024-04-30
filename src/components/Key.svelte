@@ -7,15 +7,15 @@
   export let extraClasses = '';
 
   let bgColor = 'bg-key-basic';
+  let hoverColor = 'hover:bg-key-basic-hover';
   let shColor = 'shadow-key-basic-sh';
   let textColor = 'text-key-basic-text';
   let textSize = 'text-base';
 
   switch (type) {
-    case KeyType.Basic:
-      break;
     case KeyType.Primary:
       bgColor = 'bg-key-primary';
+      hoverColor = 'hover:bg-key-primary-hover';
       shColor = 'shadow-key-primary-sh';
       textColor = 'text-key-primary-text';
       textSize = 'text-[1.25rem]';
@@ -23,6 +23,7 @@
     case KeyType.Secondary:
       bgColor = 'bg-key-secondary';
       shColor = 'shadow-key-secondary-sh';
+      hoverColor = 'hover:bg-key-secondary-hover';
       textColor = 'text-key-secondary-text';
       textSize = 'text-[1.25rem]';
       break;
@@ -33,6 +34,8 @@
 
 <button
   on:click={() => onPress(value)}
-  class={`${bgColor} ${textColor} ${textSize} p-1 pt-2 min-h-[3.75rem] min-w-[3.75rem] rounded-md shadow-[0_4px] ${shColor} ${extraClasses} transition-[background-color] duration-150`}
-  >{value}</button
+  class={`${bgColor} ${textColor} ${textSize} ${shColor} ${extraClasses}
+  p-1 pt-2 min-h-[3.75rem] min-w-[3.75rem] rounded-md shadow-[0_4px]
+  ${hoverColor}
+  transition-[background-color] duration-150`}>{value}</button
 >
