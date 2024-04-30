@@ -1,21 +1,33 @@
 <script>
   import { onMount } from 'svelte';
-  import themeStore, { Theme } from '../stores/themeStore';
-  import { get } from 'svelte/store';
 
   let toggleElement;
+  let htmlElement;
 
   onMount(() => {
     toggleElement = document.getElementById('toggle');
+    htmlElement = document.body.parentElement;
   });
 
   let themeIndex = 0;
   function changeTheme() {
-    if (themeIndex >= 2) {
-      themeIndex = 0;
-    } else themeIndex++;
+    switch (themeIndex) {
+      case 0:
+        htmlElement.attributes.getNamedItem('data-theme').value = 'light';
+        themeIndex++;
+        break;
+      case 1:
+        htmlElement.attributes.getNamedItem('data-theme').value = 'neon';
+        themeIndex++;
+        break;
+      case 2:
+        htmlElement.attributes.getNamedItem('data-theme').value = 'default';
+        themeIndex = 0;
+        break;
 
-    themeStore.set(Object.keys(Theme)[themeIndex]);
+      default:
+        break;
+    }
 
     toggleElement.style.transform = `translateX(${1.5 * themeIndex}rem)`;
   }
@@ -32,7 +44,7 @@
     <button on:click={changeTheme} class="bg-keypad p-1 rounded-full">
       <div
         id="toggle"
-        class="size-4 bg-key-primary rounded-full transition-transform"
+        class="size-4 bg-key-primary rounded-full transition-all"
       ></div>
     </button>
   </div>

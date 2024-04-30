@@ -6,9 +6,9 @@
   export let onPress = (value) => {};
   export let extraClasses = '';
 
-  let bgColor = 'bg-key-tertiary';
-  let shColor = 'shadow-key-tertiary-sh';
-  let textColor = 'text-text-secondary';
+  let bgColor = 'bg-key-basic';
+  let shColor = 'shadow-key-basic-sh';
+  let textColor = 'text-key-basic-text';
   let textSize = 'text-base';
 
   switch (type) {
@@ -17,13 +17,13 @@
     case KeyType.Primary:
       bgColor = 'bg-key-primary';
       shColor = 'shadow-key-primary-sh';
-      textColor = 'text-text-primary';
+      textColor = 'text-key-primary-text';
       textSize = 'text-[1.25rem]';
       break;
     case KeyType.Secondary:
       bgColor = 'bg-key-secondary';
       shColor = 'shadow-key-secondary-sh';
-      textColor = 'text-text-primary';
+      textColor = 'text-key-secondary-text';
       textSize = 'text-[1.25rem]';
       break;
     default:
@@ -33,6 +33,6 @@
 
 <button
   on:click={() => onPress(value)}
-  class={`${bgColor} ${textColor} ${textSize} p-1 pt-2 min-h-[3.75rem] min-w-[3.75rem] rounded-md shadow-[0_4px] ${shColor} ${extraClasses}`}
+  class={`${bgColor} ${textColor} ${textSize} p-1 pt-2 min-h-[3.75rem] min-w-[3.75rem] rounded-md shadow-[0_4px] ${shColor} ${extraClasses} transition-[background-color] duration-150`}
   >{value}</button
 >
