@@ -7,7 +7,7 @@
   }
 </script>
 
-<div class="bg-keypad p-4 rounded-md grid grid-cols-4 gap-4">
+<div class="bg-keypad p-6 rounded-md grid grid-cols-4 gap-4">
   <Key value="7" onPress={onBtnPressed} />
   <Key value="8" onPress={onBtnPressed} />
   <Key value="9" onPress={onBtnPressed} />

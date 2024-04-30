@@ -35,7 +35,7 @@
 <button
   on:click={() => onPress(value)}
   class={`${bgColor} ${textColor} ${textSize} ${shColor} ${extraClasses}
-  p-1 pt-2 min-h-[3.75rem] min-w-[3.75rem] rounded-md shadow-[0_4px]
+  p-1 pt-2 min-h-[3.75rem] rounded-md shadow-[0_4px]
   ${hoverColor}
   transition-[background-color] duration-150`}>{value}</button
 >
