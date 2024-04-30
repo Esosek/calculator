@@ -3,7 +3,6 @@
 
   export let value;
   export let type = KeyType.Basic;
-  export let onPress = (value) => {};
   export let extraClasses = '';
 
   let bgColor = 'bg-key-basic';
@@ -11,6 +10,10 @@
   let shColor = 'shadow-key-basic-sh';
   let textColor = 'text-key-basic-text';
   let textSize = 'text-base';
+
+  function onPress() {
+    console.log('Button pressed:', value);
+  }
 
   switch (type) {
     case KeyType.Primary:
@@ -33,7 +36,7 @@
 </script>
 
 <button
-  on:click={() => onPress(value)}
+  on:click={onPress}
   class={`${bgColor} ${textColor} ${textSize} ${shColor} ${extraClasses}
   p-1 pt-2 min-h-[3.75rem] rounded-md shadow-[0_4px]
   ${hoverColor}
