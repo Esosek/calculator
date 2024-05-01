@@ -7,6 +7,14 @@ export const Operation = {
   Divide: 'divide',
 };
 
+const defaultValues = {
+  current: 0,
+  memory: 0,
+  selectedOperation: Operation.Increment,
+};
+
+const calculator = writable(defaultValues);
+
 function addNumber(value) {
   calculator.update((currentValue) => {
     return {
@@ -15,8 +23,6 @@ function addNumber(value) {
     };
   });
 }
-
-function selectOperation(operation) {}
 
 function del() {
   calculator.update((currentValue) => {
@@ -33,21 +39,19 @@ function del() {
   });
 }
 
-function reset() {}
+function reset() {
+  calculator.set(defaultValues);
+}
+
+function selectOperation(operation) {}
 
 function result() {}
-
-const calculator = writable({
-  current: 0,
-  memory: 0,
-  selectedOperation: Operation.Increment,
-});
 
 export default {
   subscribe: calculator.subscribe,
   addNumber,
-  selectOperation,
   del,
   reset,
+  selectOperation,
   result,
 };

@@ -17,6 +17,8 @@
 
     if (value === 'DEL') {
       calculator.del();
+    } else if (value === 'RESET') {
+      calculator.reset();
     } else {
       calculator.addNumber(value);
     }
