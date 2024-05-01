@@ -1,4 +1,5 @@
 <script>
+  import calculator from '../stores/calculator';
   import { KeyType } from '../utils/keyType';
 
   export let value;
@@ -13,6 +14,12 @@
 
   function onPress() {
     console.log('Button pressed:', value);
+
+    if (value === 'DEL') {
+      calculator.del();
+    } else {
+      calculator.addNumber(value);
+    }
   }
 
   switch (type) {

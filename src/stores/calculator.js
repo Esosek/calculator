@@ -7,11 +7,31 @@ export const Operation = {
   Divide: 'divide',
 };
 
-function addNumber(value) {}
+function addNumber(value) {
+  calculator.update((currentValue) => {
+    return {
+      ...currentValue,
+      current: parseInt(currentValue.current + value),
+    };
+  });
+}
 
 function selectOperation(operation) {}
 
-function del() {}
+function del() {
+  calculator.update((currentValue) => {
+    let stringCurrent = currentValue.current.toString();
+    if (stringCurrent.length > 1) {
+      stringCurrent = stringCurrent.slice(0, -1);
+    } else {
+      stringCurrent = '0';
+    }
+    return {
+      ...currentValue,
+      current: parseInt(stringCurrent),
+    };
+  });
+}
 
 function reset() {}
 
