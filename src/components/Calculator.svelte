@@ -1,6 +1,9 @@
 <script>
   import ThemeToggle from '../components/ThemeToggle.svelte';
   import Keypad from './Keypad.svelte';
+  import calculator from '../stores/calculator';
+
+  let currentValue = $calculator.current;
 </script>
 
 <body
@@ -14,7 +17,7 @@
     <p
       class="text-end bg-calc-screen py-4 px-6 rounded-md transition-[background-color] duration-150"
     >
-      399,981
+      {currentValue.toLocaleString()}
     </p>
     <Keypad />
   </main>
