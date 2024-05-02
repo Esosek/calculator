@@ -83,7 +83,20 @@ function selectOperation(operation) {
   });
 }
 
-function result() {}
+function result() {
+  calculator.update((prevValue) => {
+    const total = resolveOperation(
+      prevValue.memory,
+      prevValue.current,
+      prevValue.selectedOperation
+    );
+    return {
+      ...prevValue,
+      memory: 0,
+      current: total,
+    };
+  });
+}
 
 export default {
   subscribe: calculator.subscribe,
