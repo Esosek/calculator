@@ -8,7 +8,7 @@ export const Operation = {
 };
 
 const defaultValues = {
-  current: 0,
+  current: '',
   memory: 0,
   selectedOperation: Operation.Increment,
 };
@@ -16,26 +16,39 @@ const defaultValues = {
 const calculator = writable(defaultValues);
 
 function addNumber(value) {
-  calculator.update((currentValue) => {
+  calculator.update((prevValue) => {
     return {
-      ...currentValue,
-      current: parseInt(currentValue.current + value),
+      ...prevValue,
+      current: prevValue.current.toString() + value,
     };
   });
 }
 
-function addComma() {}
+function addComma() {
+  calculator.update((prevValue) => {
+    let currentString = prevValue.current.toString();
+
+    if (!currentString.includes('.')) {
+      currentString += '.';
+    }
+
+    return {
+      ...prevValue,
+      current: currentString,
+    };
+  });
+}
 
 function del() {
-  calculator.update((currentValue) => {
-    let stringCurrent = currentValue.current.toString();
+  calculator.update((prevValue) => {
+    let stringCurrent = prevValue.current.toString();
     if (stringCurrent.length > 1) {
       stringCurrent = stringCurrent.slice(0, -1);
     } else {
       stringCurrent = '0';
     }
     return {
-      ...currentValue,
+      ...prevValue,
       current: parseInt(stringCurrent),
     };
   });
@@ -45,7 +58,10 @@ function reset() {
   calculator.set(defaultValues);
 }
 
-function resolveOperation(a, b, operation) {
+function resolveOperation(firstNumber, secondNumber, operation) {
+  let a = parseFloat(firstNumber);
+  let b = parseFloat(secondNumber);
+
   switch (operation) {
     case Operation.Increment:
       return a + b;
@@ -71,13 +87,13 @@ function selectOperation(operation) {
       );
       return {
         memory: subTotal,
-        current: 0,
+        current: '',
         selectedOperation: operation,
       };
     } else
       return {
         memory: prevValue.current,
-        current: 0,
+        current: '',
         selectedOperation: operation,
       };
   });
@@ -101,6 +117,7 @@ function result() {
 export default {
   subscribe: calculator.subscribe,
   addNumber,
+  addComma,
   del,
   reset,
   selectOperation,

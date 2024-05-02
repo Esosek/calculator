@@ -20,7 +20,7 @@
       <ThemeToggle />
     </div>
     <div
-      class="flex justify-between bg-calc-screen py-4 px-6 rounded-md transition-[background-color] duration-150"
+      class="flex justify-between bg-calc-screen min-h-[5rem] py-4 px-6 rounded-md transition-[background-color] duration-150"
     >
       <p class="text-sm">
         {$calculator.memory !== 0

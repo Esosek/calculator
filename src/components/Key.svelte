@@ -22,6 +22,9 @@
       case 'RESET':
         calculator.reset();
         break;
+      case '.':
+        calculator.addComma();
+        break;
       case '+':
         calculator.selectOperation(Operation.Increment);
         break;
