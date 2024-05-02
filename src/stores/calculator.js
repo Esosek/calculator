@@ -45,11 +45,11 @@ function del() {
     if (stringCurrent.length > 1) {
       stringCurrent = stringCurrent.slice(0, -1);
     } else {
-      stringCurrent = '0';
+      stringCurrent = '';
     }
     return {
       ...prevValue,
-      current: parseInt(stringCurrent),
+      current: stringCurrent,
     };
   });
 }
