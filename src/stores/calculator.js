@@ -59,8 +59,8 @@ function reset() {
 }
 
 function resolveOperation(firstNumber, secondNumber, operation) {
-  let a = parseFloat(firstNumber);
-  let b = parseFloat(secondNumber);
+  let a = isNaN(parseFloat(firstNumber)) ? 0 : parseFloat(firstNumber);
+  let b = isNaN(parseFloat(secondNumber)) ? 0 : parseFloat(secondNumber);
 
   switch (operation) {
     case Operation.Increment:
