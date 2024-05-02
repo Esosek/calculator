@@ -24,6 +24,8 @@ function addNumber(value) {
   });
 }
 
+function addComma() {}
+
 function del() {
   calculator.update((currentValue) => {
     let stringCurrent = currentValue.current.toString();
@@ -43,7 +45,43 @@ function reset() {
   calculator.set(defaultValues);
 }
 
-function selectOperation(operation) {}
+function resolveOperation(a, b, operation) {
+  switch (operation) {
+    case Operation.Increment:
+      return a + b;
+    case Operation.Decrement:
+      return a - b;
+    case Operation.Multiply:
+      return a * b;
+    case Operation.Divide:
+      if (b == 0) {
+        return a;
+      } else return a / b;
+  }
+}
+
+function selectOperation(operation) {
+  calculator.update((prevValue) => {
+    // Consecutive mathematical operations trigger subtotal
+    if (prevValue.memory !== 0) {
+      const subTotal = resolveOperation(
+        prevValue.memory,
+        prevValue.current,
+        prevValue.selectedOperation
+      );
+      return {
+        memory: subTotal,
+        current: 0,
+        selectedOperation: operation,
+      };
+    } else
+      return {
+        memory: prevValue.current,
+        current: 0,
+        selectedOperation: operation,
+      };
+  });
+}
 
 function result() {}
 

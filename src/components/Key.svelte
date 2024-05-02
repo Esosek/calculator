@@ -1,5 +1,5 @@
 <script>
-  import calculator from '../stores/calculator';
+  import calculator, { Operation } from '../stores/calculator';
   import { KeyType } from '../utils/keyType';
 
   export let value;
@@ -13,14 +13,33 @@
   let textSize = 'text-base';
 
   function onPress() {
-    console.log('Button pressed:', value);
+    // console.log('Button pressed:', value);
 
-    if (value === 'DEL') {
-      calculator.del();
-    } else if (value === 'RESET') {
-      calculator.reset();
-    } else {
-      calculator.addNumber(value);
+    switch (value) {
+      case 'DEL':
+        calculator.del();
+        break;
+      case 'RESET':
+        calculator.reset();
+        break;
+      case '+':
+        calculator.selectOperation(Operation.Increment);
+        break;
+      case '-':
+        calculator.selectOperation(Operation.Decrement);
+        break;
+      case 'x':
+        calculator.selectOperation(Operation.Multiply);
+        break;
+      case '/':
+        calculator.selectOperation(Operation.Divide);
+        break;
+      case '=':
+        calculator.result();
+        break;
+      default:
+        calculator.addNumber(value);
+        break;
     }
   }
 

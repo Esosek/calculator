@@ -1,7 +1,14 @@
 <script>
   import ThemeToggle from '../components/ThemeToggle.svelte';
   import Keypad from './Keypad.svelte';
-  import calculator from '../stores/calculator';
+  import calculator, { Operation } from '../stores/calculator';
+
+  const OperationSign = {
+    increment: '+',
+    decrement: '-',
+    multiply: '*',
+    divide: '/',
+  };
 </script>
 
 <body
@@ -12,11 +19,18 @@
       <h1>calc</h1>
       <ThemeToggle />
     </div>
-    <p
-      class="text-end bg-calc-screen py-4 px-6 rounded-md transition-[background-color] duration-150"
+    <div
+      class="flex justify-between bg-calc-screen py-4 px-6 rounded-md transition-[background-color] duration-150"
     >
-      {$calculator.current.toLocaleString()}
-    </p>
+      <p class="text-sm">
+        {$calculator.memory !== 0
+          ? `${$calculator.memory.toLocaleString()} ${OperationSign[$calculator.selectedOperation]}`
+          : ''}
+      </p>
+      <p>
+        {$calculator.current.toLocaleString()}
+      </p>
+    </div>
     <Keypad />
   </main>
 </body>
