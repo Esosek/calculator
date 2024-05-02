@@ -39,7 +39,7 @@ Users should be able to:
 
 - [Astro](https://astro.build/) - Web framework
 - [Svelte](https://svelte.dev/) - Front-end frawework
-- [TailwingCSS](https://tailwindcss.com/) - CSS framework
+- [TailwindCSS](https://tailwindcss.com/) - CSS framework
 
 ### What I learned
 
