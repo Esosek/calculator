@@ -19,7 +19,8 @@ function addNumber(value) {
   calculator.update((prevValue) => {
     return {
       ...prevValue,
-      current: prevValue.current.toString() + value,
+      current:
+        prevValue.current == 0 ? value : prevValue.current.toString() + value,
     };
   });
 }

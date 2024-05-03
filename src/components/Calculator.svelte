@@ -1,7 +1,7 @@
 <script>
   import ThemeToggle from '../components/ThemeToggle.svelte';
   import Keypad from './Keypad.svelte';
-  import calculator, { Operation } from '../stores/calculator';
+  import calculator from '../stores/calculator';
 
   const OperationSign = {
     increment: '+',
