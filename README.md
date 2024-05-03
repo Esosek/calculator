@@ -26,7 +26,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.png)
+![](/screenshot.png)
 
 ### Links
 
@@ -46,6 +46,7 @@ Users should be able to:
 - How to implement color themes with Tailwind
 - Tailwind customization
 - Transforming numbers and strings
+- How to read preferred device theme
 
 ## Author
 
